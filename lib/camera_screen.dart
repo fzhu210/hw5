@@ -65,10 +65,29 @@ class _CameraScreenState extends State<CameraScreen>
         home: Scaffold(
         appBar: AppBar(title: Text('Wasteagram'),),
         body: 
-        Center(
-          child: CircularProgressIndicator(
-          value: controller.value,
+        Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircularProgressIndicator(
+                value: controller.value,)
+              ]
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+
+              children: [
+                ElevatedButton(
+                  child: Icon(Icons.camera_alt_outlined),
+                  onPressed: (){
+                    getImage();
+                  }
+                )
+              ]
+            ),
+          ]
         // Align(
         //   alignment: Alignment.bottomCenter,
         //   child: ElevatedButton(
